@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Message Details</title>
+</head>
+<body>
+    <div class="body">
+        <div class="nav">
+            <%- include('title', {title: 'Message Details'}) %>
+        </div>
+        <div class="msg-detail">
+            <h2>Message Details</h2>
+            <p><strong>User:</strong> <%= message.user %></p>
+            <p><strong>Text:</strong> <%= message.text %></p>
+            <p><strong>Date:</strong> <%= formatDate(message.added) %></p>
+            <a href="/">Back to messages</a>
+        </div>
+    </div>
+</body>
+</html>

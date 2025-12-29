@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mini Messageboard</title>
+</head>
+<body>
+    <div class="body">
+        <div class="nav">
+            <%- include('title', {title: title}) %>
+        </div>
+        <div class="msg">
+            <% messages.forEach((msg, index) => { %>
+                <div class="post">
+                    <div class="user"><%- include('message', {message: msg.user}); %> <%= formatDate(msg.added) %></div>
+                    <div class="text"><%- include('message', {message: msg.text}); %></div>
+                    <button class="open" onclick="window.location.href='/message/<%= index %>'">Open</button>
+                </div>
+            <% }) %>
+        </div>
+
+        <div class="new">
+            <h2>Add Message</h2>
+            <button class="open" onclick="window.location.href='/new'">+</button>
+        </div>
+    </div>
+</body>
+</html>
